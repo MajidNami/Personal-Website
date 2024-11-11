@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForestCrazy Profile</title>
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Reduce line spacing in paragraphs */
+        p {
+            margin: 4px 0; /* Adjust as needed */
+            line-height: 1.4; /* Adjust line height */
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .main-timeline {
+            position: relative;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .main-timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #939597;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* Container around content */
+        .timeline {
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: #939597;
+            border: 5px solid #F5DF4D;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+            padding: 0px 40px 20px 0px;
+            left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+            padding: 0px 0px 20px 40px;
+            left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+            content: " ";
+            position: absolute;
+            top: 18px;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+            content: " ";
+            position: absolute;
+            top: 18px;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -12px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .main-timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .timeline {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            /* Make sure that all arrows are pointing leftwards */
+            .timeline::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            /* Make sure all circles are at the same spot */
+            .left::after,
+            .right::after {
+                left: 18px;
+            }
+
+            .left::before {
+                right: auto;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
+            .section-title {
+        margin: 20px 0; /* فاصله بالا و پایین */
+        padding: 0 15px; /* فاصله از سمت چپ و راست */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-0">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item p-4">
+                        <a class="text-dark" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item p-4">
+                        <a class="text-purple-400" aria-current="page" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item p-4">
+                        <a class="text-dark" href="skills.html">Teaching</a>
+                    </li>
+                    <li class="nav-item p-4">
+                        <a class="text-dark" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="h-75">
+            <div class="section">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="d-flex align-items-lg-center">
+                            <div style="padding-top: 2%">
+                                <p class="fs-1 fw-bold">Projects</p>
+                                <h3>Design and Implementation of Image Processing Service with Agile Approach Using Cloud Services</h3>
+                                <p>
+                                    - Bachelors Final Project<br>
+                                    - Supervised by Dr Alireza Bagheri<br>
+                                    - Using cloud computing platforms<br>
+                                    - Use agile methodology<br>
+                                    - Using Django and Spyder IDE
+                                </p>
+                                <h3>Automatic Vehicle License Plate Recognition System</h3>
+                                <p>
+                                    - Supervised by Dr Ehsan Alirezaei<br>
+                                    - Developed a system for automatic recognition of Iranian license plates, applicable in smart parking, traffic control, security, toll collection, and more.<br>
+                                    - Created a dataset with vehicle images for license plate recognition and a second dataset for recognizing plate text specifically for Iranian plates.<br>
+                                    - Utilized YOLOv8 for license plate detection and both YOLOv8 and Faster R-CNN for plate text recognition.<br>
+                                    - Achieved precision metrics: Recall and mAP50 of 0.99 and 0.993 for plate recognition, and for plate text recognition, 0.941 and 0.964 with YOLOv8, and 0.99 and 0.983 with Faster R-CNN on the validation set.<br>
+                                    - Developed a user interface using Flask (Python) along with HTML, CSS, and JavaScript, integrating both detection and recognition models into a cohesive system.
+                                </p>
+                                <h3>Persian Text Processing and Enhancement System</h3>
+                                <p>
+                                    - Course: Software Engineering 1 (Oversaw project as the Head Teaching Assistant, Instructor: Dr Amir Kalbasi)<br>
+                                    - Role: Product Manager overseeing project management of 10 teams, each consisting of 4 members.<br>
+                                    - Project Summary: Designed and implemented a comprehensive system for Persian text processing that provides a suite of tools to enhance Persian text writing and editing. The system includes features such as real-time autocomplete, which suggests probable next words based on local text data to aid faster typing; spell correction using rule-based methods with the Parsivar and Hazm libraries alongside statistical approaches to improve accuracy; and a synonym and foreign word finder, leveraging datasets and language models (e.g., Word2Vec, GloVe, and FastText) to enrich vocabulary by suggesting synonyms and Persian equivalents for foreign terms. Additionally, the next-word suggestion feature uses n-gram and machine learning algorithms to analyze sentence context and provide relevant word predictions, while the text structure optimization tool refines text layout by adjusting spacing, half-spacing, and punctuation through regex and Hazm library integrations, producing polished and professional output..<br>
+                                    - Technologies: Python, JavaScript, SQL, Enterprise Architect, with Parsivar and Hazm libraries, regex, and API integration where needed.<br>
+                                    - Managed with Agile methodology and Jira for production management.
+                                    - Working on the backend and as the production manager in Jira
+                                </p>
+                                <div>
+                                    <h3>Football Fan Platform</h3>
+                                    <p>- Course: Software Engineering 1 (Instructor: Dr Ehsan Alirezaei)<br>
+                                       - Using multiple programming languages including Python, JavaScript, SQL, and Enterprise Architect software.<br>
+                                       - Agile methodology<br>
+                                       - Group of 4 members working on the project<br>
+                                       - Backend and Production Manager in Jira</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>English Language Learning Website Development</h3>
+                                    <p>- Course: Software Engineering 1 (Head Teaching Assistant, Instructor: Dr Ehsan Alirezaei)<br>
+                                       - Designed as a microservices architecture<br>
+                                       - Product Manager of 16 teams, each with 3 members<br>
+                                       - Using multiple programming languages including Python, JavaScript, SQL, and Enterprise Architect software.<br>
+                                       - Agile methodology<br>
+                                       - Backend and Production Manager in Jira</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>Hand Written Digit Recognition</h3>
+                                    <p>- Course: Principles of Computational Intelligence (Instructor: Dr Mohammad Mehdi Ebadzadeh)<br>
+                                       - Using Python and Spyder IDE<br>
+                                       - MNIST database<br>
+                                       - Implemented a fully-connected neural network with two hidden layers using Numpy library</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>Evolutionary Game Implementation</h3>
+                                    <p>- Course: Principles of Computational Intelligence (Instructor: Dr Mohammad Mehdi Ebadzadeh)<br>
+                                       - Using Python and Spyder IDE<br>
+                                       - Programmed an agent for a simple 2D mini game using neural networks and evolutionary algorithms</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>Data Mining Projects</h3>
+                                    <p>- Course: Data Mining (Instructor: Dr Ehsan Nazerfard)<br>
+                                       - Using Python, Spyder IDE, and Jupyter Notebook<br>
+                                       - Using Scikit-Learn, Pandas, Matplotlib, and Numpy libraries to implement decision tree structures</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>Search Engine</h3>
+                                    <p>- Course: Information Retrieval (Instructor: Dr Ahmad Nickabadi)<br>
+                                       - Using Python and Jupyter Notebook<br>
+                                       - Built using a Persian database of sport news<br>
+                                       - Search box returns top related results for entered keywords using common search techniques</p>
+                                </div>
+                            
+                                <div>
+                                    <h3>Pre-processing and Data Classification</h3>
+                                    <p>- Implemented various algorithms: Decision Tree, KNN, Bayesian, Linear/Nonlinear SVM, Random Forest, and Adaboost classifiers</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-5" style="margin: 0; padding: 0;">
+            <h2 class="fs-1 fw-bold">Research</h2>
+            <section>
+                <div class="container py-2">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <h3>Software Engineering | Sep 2023 - Present</h3>
+                            <p>
+                                • As a member of a research group focused on designing and implementing optimal software, I am responsible for acquiring skills in the field of architectural design, quality assurance, and productivity of cloud services. Learning to analyze data from research results, I am actively involved in developing these competencies.<br>
+                                • Under supervision of: Dr Ehsan Alirezaei
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="my-5" style="margin: 0; padding: 0;">
+            <h2 class="fs-1 fw-bold">Skills</h2>
+            <section>
+                <div class="container py-2">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <h3>Programming</h3>
+                            <ul>
+                                <li>Python: Expert
+                                    <ul>
+                                        <li>PyTorch</li>
+                                        <li>NumPy</li>
+                                        <li>Matplotlib</li>
+                                        <li>Pandas</li>
+                                        <li>Scikit-Learn</li>
+                                    </ul>
+                                </li>
+                                <li>C/C++</li>
+                                <li>Java</li>
+                                <li>JavaScript</li>
+                                <li>HTML5/CSS3</li>
+                                <li>Django</li>
+                            </ul>
+        
+                            <h3>Operating Systems</h3>
+                            <ul>
+                                <li>Microsoft Windows</li>
+                                <li>Ubuntu Linux</li>
+                                <li>Xv6</li>
+                            </ul>
+        
+                            <h3>General Software</h3>
+                            <ul>
+                                <li>Microsoft Office (Word, Excel, etc.)</li>
+                                <li>Visual Studio Code</li>
+                                <li>Enterprise Architect</li>
+                                <li>SQL Manager for PostgreSQL</li>
+                                <li>Arduino</li>
+                                <li>VMware Workstation</li>
+                                <li>IntelliJ</li>
+                                <li>Git and Git Bash</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+                       
+            <div class="my-5" style="margin: 0; padding: 0;">
+                <h2 class="fs-1 fw-bold">Education</h2>
+                <section>
+                    <div class="container py-2">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-body p-4">
+                                        <h3>2019 - 2023</h3>
+                                        <p class="mb-0 fw-bold">B.Sc. in Computer Engineering</p>
+                                        <p class="mb-0">Amir Kabir University of Technology</p>
+                                        <p class="mb-0">GPA: 17.29/20, 3.54/4</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-body p-4">
+                                        <h3>2017 - 2019</h3>
+                                        <p class="mb-0 fw-bold">B.Sc. in Textile Engineering</p>
+                                        <p class="mb-0">Amir Kabir University of Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
